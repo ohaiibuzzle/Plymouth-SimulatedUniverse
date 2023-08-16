@@ -1,0 +1,26 @@
+# Nice colour on top of the screen fading to
+Window.SetBackgroundTopColor (0.07, 0.07, 0.07);
+
+# an equally nice colour on the bottom
+Window.SetBackgroundBottomColor (0.07, 0.07, 0.07);
+
+# Image animation loop
+for (i = 1; i < 180; i++)
+  loader_image[i] = Image("progress-" + i + ".png");
+su_sprite = Sprite();
+
+
+su_sprite.SetX(Window.GetWidth() / 2 - loader_image[1].GetWidth() / 2); # Place in the centre
+su_sprite.SetY(Window.GetHeight() / 2 - loader_image[1].GetHeight() / 2);
+
+progress = 1;
+
+fun refresh_callback ()
+  {
+    su_sprite.SetImage(loader_image[Math.Int(progress / 3) % 180]);
+    progress++;
+  }
+  
+Plymouth.SetRefreshFunction (refresh_callback);
+
+
