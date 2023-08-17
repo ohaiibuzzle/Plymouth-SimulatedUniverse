@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=SimulatedUniverse
+Description=Free anxiety everytime you boot
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/SimulatedUniverse/
+ScriptFile=/usr/share/plymouth/themes/SimulatedUniverse/animated-boot.script
